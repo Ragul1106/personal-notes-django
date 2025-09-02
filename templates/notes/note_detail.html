@@ -1,0 +1,13 @@
+{% extends "notes/base.html" %}
+{% block content %}
+<div class="card shadow-sm border-0">
+  <div class="card-body">
+    <h2 class="card-title">{{ object.title }}</h2>
+    <p class="card-text">{{ object.content }}</p>
+
+    <a href="{% url 'note-update' object.pk %}" class="btn btn-warning btn-sm">✏️ Edit</a>
+    <a href="{% url 'note-delete' object.pk %}" class="btn btn-danger btn-sm">🗑 Delete</a>
+    <a href="{% url 'note-list' %}" class="btn btn-secondary btn-sm">⬅️ Back</a>
+  </div>
+</div>
+{% endblock %}
